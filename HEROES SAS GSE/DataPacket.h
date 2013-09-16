@@ -17,18 +17,32 @@
 @property (nonatomic) uint16_t commandKey;
 @property (nonatomic) NSValue *sunCenter;
 @property (nonatomic) NSValue *CTLCommand;
-@property (nonatomic) NSRange ImageRange;
+@property (nonatomic) int ImageMax;
 @property (nonatomic) float cameraTemperature;
 @property (nonatomic) float cpuTemperature;
 @property (nonatomic) BOOL isSAS1;
 @property (nonatomic) BOOL isSAS2;
 @property (nonatomic) NSValue *screenCenter;
 @property (nonatomic) float screenRadius;
+@property (nonatomic) NSMutableArray *i2cTemperatures;
+@property (nonatomic) NSMutableArray *sbcVoltages;
+@property (nonatomic) BOOL isTracking;
+@property (nonatomic) BOOL isReceivingGPS;
+@property (nonatomic) BOOL isOutputting;
+@property (nonatomic) BOOL isClockSynced;
+@property (nonatomic) BOOL isPYASSavingImages;
+@property (nonatomic) BOOL isRASSavingImages;
+@property (nonatomic) NSString *aspectErrorCode;
+@property (nonatomic) float clockingAngle;
+@property (nonatomic) NSValue *screenCenterOffset;
 
 -(NSString *) getframeTimeString;
 -(void) addChordPoint: (NSPoint) point :(int) index;
 -(void) addFiducialPoint: (NSPoint) point :(int) index;
--(NSMutableArray *) chordPoints;
--(NSMutableArray *) fiducialPoints;
+-(void) addFiducialID: (NSPoint) ID :(int) index;
+-(NSArray *) getChordPoints;
+-(NSArray *) getFiducialPoints;
+-(NSArray *) getFiducialIDs;
+-(NSDate *) getDate;
 
 @end
