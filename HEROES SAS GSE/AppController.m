@@ -14,6 +14,7 @@
 #import "CameraView.h"
 #import "CommanderWindowController.h"
 #import "ConsoleWindowController.h"
+#import "Transform.cpp"
 
 @interface AppController ()
 @property (nonatomic, strong) NSOperationQueue *queue;
